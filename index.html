@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Jana ✦</title>
+
+<style>
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+html, body {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+body {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+
+        radial-gradient(circle at 50% 50%, rgba(91,65,150,.22), transparent 25%),
+
+        radial-gradient(circle at 20% 20%, rgba(74,107,180,.12), transparent 30%),
+
+        radial-gradient(circle at 80% 80%, rgba(201,106,61,.10), transparent 30%),
+
+        #02030a;
+
+    color: #f8f5ff;
+
+}
+
+/* ---------- STARS ---------- */
+
+#stars,
+
+#constellation {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+.star {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    opacity: .7;
+
+    animation: twinkle 3s infinite ease-in-out;
+
+}
+
+@keyframes twinkle {
+
+    0%,100% { opacity: .25; transform: scale(.7); }
+
+    50% { opacity: 1; transform: scale(1.5); }
+
+}
+
+/* ---------- SCREENS ---------- */
+
+.screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: opacity 1.2s ease;
+
+    z-index: 5;
+
+}
+
+.screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+.content {
+
+    max-width: 650px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+.small {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #aaa9c7;
+
+    margin-bottom: 22px;
+
+    text-transform: uppercase;
+
+}
+
+h1 {
+
+    font-size: clamp(32px, 8vw, 70px);
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    line-height: 1.1;
+
+}
+
+p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #d8d6ff;
+
+}
+
+.hint {
+
+    margin-top: 30px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #aaa9ba;
+
+    animation: breathe 2s infinite ease-in-out;
+
+}
+
+@keyframes breathe {
+
+    0%,100% { opacity: .3; }
+
+    50% { opacity: .9; }
+
+}
+
+/* ---------- MAIN STAR ---------- */
+
+.star-container {
+
+    width: 240px;
+
+    height: 240px;
+
+    margin: 35px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+.center-star {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            #ffffff 0%,
+
+            #d8d6ff 5%,
+
+            #9d91ff 14%,
+
+            rgba(91,72,175,.45) 35%,
+
+            rgba(35,28,75,.15) 55%,
+
+            transparent 72%
+
+        );
+
+    box-shadow:
+
+        0 0 12px #ffffff,
+
+        0 0 30px #9d91ff,
+
+        0 0 70px rgba(157,145,255,.7);
+
+    transition: all 1.5s ease;
+
+    animation: starPulse 2.5s infinite ease-in-out;
+
+}
+
+@keyframes starPulse {
+
+    0%,100% {
+
+        transform: scale(.8);
+
+        filter: brightness(.9);
+
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+        filter: brightness(1.5);
+
+    }
+
+}
+
+/* ORANGE TRANSFORMATION */
+
+.center-star.orange {
+
+    width: 50px;
+
+    height: 50px;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            #fff7ef 0%,
+
+            #ffd1b5 6%,
+
+            #e58a55 15%,
+
+            #c96a3d 30%,
+
+            rgba(169,79,44,.45) 48%,
+
+            rgba(100,40,25,.15) 65%,
+
+            transparent 75%
+
+        );
+
+    box-shadow:
+
+        0 0 15px #fff7ef,
+
+        0 0 35px #e58a55,
+
+        0 0 80px rgba(201,106,61,.8),
+
+        0 0 140px rgba(169,79,44,.4);
+
+    animation: orangePulse 1.8s infinite ease-in-out;
+
+}
+
+@keyframes orangePulse {
+
+    0%,100% {
+
+        transform: scale(.9);
+
+        filter: brightness(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.35);
+
+        filter: brightness(1.5);
+
+    }
+
+}
+
+/* ---------- CLUES ---------- */
+
+.clue {
+
+    margin: 14px 0;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition: 1s ease;
+
+    color: #e5ddff;
+
+}
+
+.clue.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.orange-text {
+
+    color: #e58a55;
+
+    text-shadow:
+
+        0 0 10px rgba(229,138,85,.5),
+
+        0 0 30px rgba(201,106,61,.35);
+
+}
+
+/* ---------- CONSTELLATION ---------- */
+
+.constellation-line {
+
+    stroke: rgba(229,138,85,.75);
+
+    stroke-width: 1;
+
+    stroke-dasharray: 5 7;
+
+    opacity: 0;
+
+    animation: drawLine 2s forwards;
+
+}
+
+.constellation-dot {
+
+    fill: #fff7ef;
+
+    filter:
+
+        drop-shadow(0 0 5px #e58a55)
+
+        drop-shadow(0 0 12px #c96a3d);
+
+    opacity: 0;
+
+    animation: appearDot 1s forwards;
+
+}
+
+@keyframes drawLine {
+
+    from {
+
+        opacity: 0;
+
+        stroke-dashoffset: 100;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        stroke-dashoffset: 0;
+
+    }
+
+}
+
+@keyframes appearDot {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+/* ---------- FINAL ---------- */
+
+.final-name {
+
+    font-size: clamp(65px, 18vw, 150px);
+
+    letter-spacing: 15px;
+
+    color: #f8f5ff;
+
+    text-shadow:
+
+        0 0 10px #ffffff,
+
+        0 0 30px #d8d6ff,
+
+        0 0 60px #c96a3d;
+
+    animation: nameGlow 3s infinite ease-in-out;
+
+}
+
+@keyframes nameGlow {
+
+    0%,100% {
+
+        text-shadow:
+
+            0 0 10px #ffffff,
+
+            0 0 30px #d8d6ff,
+
+            0 0 60px rgba(201,106,61,.5);
+
+    }
+
+    50% {
+
+        text-shadow:
+
+            0 0 15px #ffffff,
+
+            0 0 40px #e58a55,
+
+            0 0 90px rgba(201,106,61,.9);
+
+    }
+
+}
+
+.final-message {
+
+    margin-top: 35px;
+
+    font-size: 16px;
+
+    line-height: 2.1;
+
+    color: #e5ddff;
+
+}
+
+.final-message span {
+
+    color: #e58a55;
+
+}
+
+/* ---------- BUTTON ---------- */
+
+.enter-btn {
+
+    margin-top: 35px;
+
+    padding: 12px 30px;
+
+    border: 1px solid rgba(229,138,85,.5);
+
+    border-radius: 50px;
+
+    background: rgba(201,106,61,.08);
+
+    color: #e5ddff;
+
+    font-family: Arial, sans-serif;
+
+    letter-spacing: 3px;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: .4s ease;
+
+}
+
+.enter-btn:hover {
+
+    background: rgba(201,106,61,.2);
+
+    box-shadow:
+
+        0 0 20px rgba(201,106,61,.3),
+
+        0 0 50px rgba(201,106,61,.15);
+
+    transform: translateY(-2px);
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px) {
+
+    .star-container {
+
+        width: 200px;
+
+        height: 200px;
+
+    }
+
+    p {
+
+        font-size: 14px;
+
+    }
+
+    .small {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+
+    }
+
+    .final-message {
+
+        font-size: 14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- SCREEN 1 -->
+
+<section class="screen active" id="screen1">
+
+    <div class="content">
+
+        <div class="small">
+
+            SOMEWHERE IN THE UNIVERSE
+
+        </div>
+
+        <h1>
+
+            There is one star<br>
+
+            that knows your name.
+
+        </h1>
+
+        <p style="margin-top:25px;">
+
+            I hid it somewhere in this universe.<br>
+
+            Find it.
+
+        </p>
+
+        <div class="hint">
+
+            ✦ LOOK CLOSER ✦
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SCREEN 2 -->
+
+<section class="screen" id="screen2">
+
+    <div class="content">
+
+        <div class="small">
+
+            YOU FOUND IT
+
+        </div>
+
+        <h1>
+
+            But this star<br>
+
+            is different.
+
+        </h1>
+
+        <div class="star-container" id="starContainer">
+
+            <div class="center-star" id="mainStar"></div>
+
+        </div>
+
+        <p>
+
+            Touch it.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SCREEN 3 -->
+
+<section class="screen" id="screen3">
+
+    <div class="content">
+
+        <div class="small">
+
+            THE STAR REMEMBERS
+
+        </div>
+
+        <div id="clues">
+
+            <p class="clue" id="clue1">
+
+                It remembers someone <span class="orange-text">rare.</span>
+
+            </p>
+
+            <p class="clue" id="clue2">
+
+                Someone impossible to forget.
+
+            </p>
+
+            <p class="clue" id="clue3">
+
+                Someone whose name<br>
+
+                belongs among the stars.
+
+            </p>
+
+        </div>
+
+        <button class="enter-btn" onclick="showConstellation()">
+
+            FOLLOW THE LIGHT
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- SCREEN 4 -->
+
+<section class="screen" id="screen4">
+
+    <svg id="constellation"
+
+         viewBox="0 0 1000 700"
+
+         preserveAspectRatio="xMidYMid slice">
+
+        <!-- J -->
+
+        <line class="constellation-line"
+
+              x1="300" y1="200"
+
+              x2="300" y2="500"/>
+
+        <line class="constellation-line"
+
+              x1="300" y1="500"
+
+              x2="400" y2="500"/>
+
+        <line class="constellation-line"
+
+              x1="400" y1="500"
+
+              x2="400" y2="200"/>
+
+        <!-- A -->
+
+        <line class="constellation-line"
+
+              x1="470" y1="500"
+
+              x2="530" y2="200"/>
+
+        <line class="constellation-line"
+
+              x1="530" y1="200"
+
+              x2="590" y2="500"/>
+
+        <line class="constellation-line"
+
+              x1="490" y1="390"
+
+              x2="570" y2="390"/>
+
+        <!-- N -->
+
+        <line class="constellation-line"
+
+              x1="650" y1="500"
+
+              x2="650" y2="200"/>
+
+        <line class="constellation-line"
+
+              x1="650" y1="200"
+
+              x2="730" y2="500"/>
+
+        <line class="constellation-line"
+
+              x1="730" y1="500"
+
+              x2="730" y2="200"/>
+
+        <!-- A -->
+
+        <line class="constellation-line"
+
+              x1="790" y1="500"
+
+              x2="850" y2="200"/>
+
+        <line class="constellation-line"
+
+              x1="850" y1="200"
+
+              x2="910" y2="500"/>
+
+        <line class="constellation-line"
+
+              x1="810" y1="390"
+
+              x2="890" y2="390"/>
+
+    </svg>
+
+    <div class="content">
+
+        <div class="small">
+
+            THE CONSTELLATION
+
+        </div>
+
+        <button class="enter-btn"
+
+                onclick="showFinal()">
+
+            I KNOW THE NAME
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- SCREEN 5 -->
+
+<section class="screen" id="screen5">
+
+    <div class="content">
+
+        <div class="small">
+
+            THE UNIVERSE WAS NEVER RANDOM
+
+        </div>
+
+        <div class="final-name">
+
+            JANA
+
+        </div>
+
+        <p class="final-message">
+
+            I loved you then.<br>
+
+            I love you now.<br>
+
+            And I’ll choose you in <span>every universe.</span> 🤍
+
+        </p>
+
+    </div>
+
+</section>
+
+<script>
+
+/* ---------- CREATE RANDOM STARS ---------- */
+
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 170; i++) {
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+
+    star.style.top = Math.random() * 100 + "%";
+
+    const size = Math.random() * 2 + 1;
+
+    star.style.width = size + "px";
+
+    star.style.height = size + "px";
+
+    star.style.animationDelay =
+
+        Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+
+}
+
+/* ---------- SCREEN CONTROL ---------- */
+
+function showScreen(number) {
+
+    document.querySelectorAll(".screen")
+
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
+
+    document
+
+        .getElementById("screen" + number)
+
+        .classList.add("active");
+
+}
+
+/* ---------- AUTOMATIC INTRO ---------- */
+
+setTimeout(() => {
+
+    showScreen(2);
+
+}, 4500);
+
+/* ---------- STAR CLICK ---------- */
+
+document
+
+    .getElementById("starContainer")
+
+    .addEventListener("click", function() {
+
+        const star =
+
+            document.getElementById("mainStar");
+
+        star.classList.add("orange");
+
+        setTimeout(() => {
+
+            showScreen(3);
+
+            setTimeout(() => {
+
+                document
+
+                    .getElementById("clue1")
+
+                    .classList.add("show");
+
+            }, 500);
+
+            setTimeout(() => {
+
+                document
+
+                    .getElementById("clue2")
+
+                    .classList.add("show");
+
+            }, 1300);
+
+            setTimeout(() => {
+
+                document
+
+                    .getElementById("clue3")
+
+                    .classList.add("show");
+
+            }, 2100);
+
+        }, 1200);
+
+    });
+
+/* ---------- CONSTELLATION ---------- */
+
+function showConstellation() {
+
+    showScreen(4);
+
+    const lines =
+
+        document.querySelectorAll(".constellation-line");
+
+    lines.forEach((line, index) => {
+
+        line.style.animationDelay =
+
+            (index * .12) + "s";
+
+    });
+
+    /* Add glowing constellation points */
+
+    const svg =
+
+        document.getElementById("constellation");
+
+    const points = [
+
+        [300,200],
+
+        [300,500],
+
+        [400,500],
+
+        [400,200],
+
+        [470,500],
+
+        [530,200],
+
+        [590,500],
+
+        [490,390],
+
+        [570,390],
+
+        [650,500],
+
+        [650,200],
+
+        [730,500],
+
+        [730,200],
+
+        [790,500],
+
+        [850,200],
+
+        [910,500],
+
+        [810,390],
+
+        [890,390]
+
+    ];
+
+    points.forEach((point, index) => {
+
+        const circle =
+
+            document.createElementNS(
+
+                "http://www.w3.org/2000/svg",
+
+                "circle"
+
+            );
+
+        circle.setAttribute("cx", point[0]);
+
+        circle.setAttribute("cy", point[1]);
+
+        circle.setAttribute("r", 4);
+
+        circle.classList.add("constellation-dot");
+
+        circle.style.animationDelay =
+
+            (index * .15 + .5) + "s";
+
+        svg.appendChild(circle);
+
+    });
+
+}
+
+/* ---------- FINAL ---------- */
+
+function showFinal() {
+
+    showScreen(5);
+
+}
+
+</script>
+
+</body>
+
+</html>
